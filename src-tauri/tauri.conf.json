@@ -4,8 +4,7 @@
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:3000",
-    "distDir": "../out",
-    "withGlobalTauri": true
+    "distDir": "../out"
   },
   "package": {
     "productName": "hackbox-client",
@@ -79,11 +78,25 @@
     },
     "windows": [
       {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
         "title": "Hackbox",
-        "width": 800
+        "width": 800,
+        "height": 600,
+        "minWidth": 600,
+        "minHeight": 450,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false,
+        "visible": false
+      },
+      {
+        "width": 400,
+        "height": 200,
+        "center": true,
+        "decorations": false,
+        "transparent": true,
+        "skipTaskbar": true,
+        "url": "splashscreen.html",
+        "label": "splashscreen"
       }
     ]
   }
