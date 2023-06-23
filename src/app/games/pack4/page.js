@@ -1,13 +1,52 @@
 'use client'
 
-import { useRouter } from 'next/navigation';
-import { Button, Center } from '@mantine/core';
+import { Button, Center, Card, Text, BackgroundImage, Group, useMantineColorScheme, Title, Badge, Stack } from '@mantine/core';
+import { ModdedBadge } from '@/components/games/ModdedBadge';
 
 export default function PackFour() {
-    const router = useRouter();
+    const { colorScheme } = useMantineColorScheme();
     return (
-        <Center>
-            <Button color="accent" onClick={() => router.push('/')}>pack four</Button>
-        </Center>
+        <BackgroundImage src="/pack4banner.jpg" alt="Pack Four Banner" position="center" size="contain" h={"100%"}>
+            <Center h={"100%"}>
+                <Card h={"80%"} w={"80%"} bg={colorScheme == "dark" ? "#0a1420" : "#ffffff"} radius="xl">
+                    <Stack h={"100%"}>
+                        <Center>
+                            <Group position="center">
+                                <Title color="accent" order={1} align="center">The Jackbox Party Pack 4</Title>
+                                <Badge color="green" variant="dot" radius="xl" size="lg">Installed</Badge>
+                            </Group>
+                        </Center>
+                        <Center>
+                            <Group position="center">
+                                <Button color="green">Play</Button>
+                                <Button color="accent">Open Mods Folder</Button>
+                                <Button color="red">Restore</Button>
+                            </Group>
+                        </Center>
+                        <Center h={"100%"}>
+                            <Center>
+                                <Stack>
+                                    <Text>
+                                        Fibbage 3
+                                    </Text>
+                                    <Text>
+                                        Survive the Internet
+                                    </Text>
+                                    <Text>
+                                        Monster Seeking Monster
+                                    </Text>
+                                    <Text>
+                                        Bracketeering
+                                    </Text>
+                                    <Text>
+                                        Civic Doodle
+                                    </Text>
+                                </Stack>
+                            </Center>
+                        </Center>
+                    </Stack>
+                </Card>
+            </Center>
+        </BackgroundImage>
     )
 }
